@@ -22,7 +22,7 @@ L.tileLayer(
 'https://api.tiles.mapbox.com/v4/mapbox.light/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ',
 { attribution:' Map data &copy;' + mapLink, maxZoom: 18, }).addTo(map);
 
-var style = {color: 'blue'};
+var style = {weight: 2};
 
 $.getJSON("https://cdn.rawgit.com/mayotunde/search/gh-pages/lowestgdp.geojson", function(data){
 var region = new L.geoJson(data, {style,
@@ -33,7 +33,7 @@ var region = new L.geoJson(data, {style,
 	var searchbox = new L.Control.Search({layer: region, propertyName: 'Name', circleLocation: false, autocollapse: true});
 	searchbox.on('search_locationfound', function(e) {
 		
-		e.layer.setStyle({color: '#0f0'});
+		e.layer.setStyle({fillColor: '#0f0', fillOpacity:0.6, weight:3});
 		if(e.layer._popup)
 			e.layer.openPopup();
 
