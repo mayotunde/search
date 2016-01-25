@@ -20,7 +20,7 @@ var mapbox =  L.tileLayer('https://api.tiles.mapbox.com/v4/mayotunde.o2dda91k/{z
 }).addTo(map);
 
 
-$.getJSON('https://cdn.rawgit.com/mayotunde/search/gh-pages/cities.geojson', function(data){
+$.getJSON('https://cdn.rawgit.com/mayotunde/search/gh-pages/Cities.geojson', function(data){
 var cities = new L.GeoJSON(data, {
 			pointToLayer: function(feature, latlng){
 			marker= L.circleMarker(latlng);
