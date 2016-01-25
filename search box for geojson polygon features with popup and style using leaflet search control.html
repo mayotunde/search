@@ -33,7 +33,7 @@ var region = new L.geoJson(data, {style,
 	var searchbox = new L.Control.Search({layer: region, propertyName: 'Name', circleLocation: false, autocollapse: true});
 	searchbox.on('search_locationfound', function(e) {
 		
-		e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
+		e.layer.setStyle({color: '#0f0'});
 		if(e.layer._popup)
 			e.layer.openPopup();
 
